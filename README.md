@@ -1,8 +1,10 @@
 # patchTST-replication
 Reproducing results from 'A Time Series is Worth 64 Words' (Yuqi Nie, et al., 2023) and 'Are Transformers Effective for Time Series Forecasting?' (Ailing Zeng, et al., 2022)
 
-## CLI Example Runs for a Horizon of 96, with Datasets ETTm1, ETTm2, ETTh1:
-Single: 
+## CLI Example Runs for a Horizon of 96, with Datasets ETTm1, ETTm2, ETTh1, and Linear model variants:
+Ensure you are in the LTSF-Linear folder. \\
+
+Single: \
 python run_longExp.py \ 
   --is_training 1 \      
   --model_id ETTm2_336_96 \                       
@@ -20,8 +22,8 @@ python run_longExp.py \
   --num_workers 0  \
 --itr 3
 
-Multiple:
-for d in ETTm1 ETTh1; do
+Multiple: \
+for d in ETTm1 ETTh1; do \
   python run_longExp.py \
     --is_training 1 --model NLinear --features M \
     --model_id ${d}_336_96 --data ${d} --root_path ./dataset/ETT/ \
@@ -31,8 +33,8 @@ for d in ETTm1 ETTh1; do
 
 ## Recommended to Create a Virtual Environment: 
 e.g.: 
-  conda create -n ltsf_linear python=3.8 -y
-  conda activate ltsf_linear
-  pip install -r LTSF-Linear/requirements.txt
-and then:
-  cd ltfs-linear
+  conda create -n ltsf_linear python=3.8 -y \
+  conda activate ltsf_linear \
+  pip install -r LTSF-Linear/requirements.txt \
+and then: \
+  cd ltfs-linear \

@@ -172,3 +172,10 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# --- LTSF checkpoints & results ---
+checkpoints/
+test_results/
+results/
+*.npy
+*.pdf
